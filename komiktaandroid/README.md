@@ -5,7 +5,7 @@ Native Android client for the existing Komikta Node.js/Express API. This is not 
 ## Included
 - Native Compose UI with dark visual language aligned with the website's current design tokens.
 - Home feed and latest updates from `/api/home` and `/api/update`.
-- Search, genre filters, latest/popular sorting and catalog grid from `/api/explore`.
+- Search, genre filters, latest/popular sorting and catalog grid from `/api/explore`, loading multiple pages (up to 20 pages of 200 titles each).
 - Comic detail, synopsis, genres, chapter list and vertical chapter reader.
 - Persistent local saved list, native bottom navigation, loading/error/empty states.
 - Coil image loading, Retrofit + Gson, coroutine-based requests.
