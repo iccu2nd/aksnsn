@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 val komiktaApiBaseUrl = providers.gradleProperty("KOMIKTA_API_BASE_URL")
-    .orElse("https://aaaa-one-iota.vercel.app/")
+    .orElse("https://komikta.vercel.app/")
     .get()
 
 android {
