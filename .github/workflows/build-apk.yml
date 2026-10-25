@@ -13,6 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: komiktaandroid
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,17 +28,17 @@ jobs:
           java-version: '17'
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v6
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
 
       - name: Build Debug APK
-        run: |
-          chmod +x ./gradlew
-          ./gradlew assembleDebug
+        run: gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Komikta-APK
-          path: app/build/outputs/apk/debug/*.apk
+          path: komiktaandroid/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
           
